@@ -1,0 +1,38 @@
+.NavHeader .header_top {
+  background-color: #fff;
+}
+.NavHeader .normal {
+  background: #fff;
+}
+.NavHeader .second {
+  background: #09f;
+  color: #fff;
+  text-align: right;
+}
+.NavHeader .second a {
+  color: #013c63;
+}
+.NavHeader .header_bottom {
+  height: 40px;
+  padding: 0px 40px;
+  border-top: 1px solid #09f;
+  background: #fff;
+}
+.NavHeader .header_bottom .pagetitle {
+  position: relative;
+  width: 80px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 16px;
+}
+.NavHeader .header_bottom .pagetitle::after {
+  position: absolute;
+  content: '';
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-top: 12px solid #fff;
+  left: 50%;
+  bottom: 0px;
+  transform: translate(-50%, 90%);
+}
