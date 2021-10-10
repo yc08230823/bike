@@ -94,7 +94,6 @@
 
 import  React,{useEffect} from 'react';
 import { Card } from "antd"
-import echartTheme from "./echartTheme"
 import ReactEchart from 'echarts-for-react';
 import echarts from "echarts"  
 import "echarts/lib/chart/bar"                                    //柱形图
@@ -104,9 +103,7 @@ interface IBarpageProps {
 }
 
 const Barpage: React.FunctionComponent<IBarpageProps> = (props) => {
-    useEffect(()=>{
-       echarts.registerTheme("Imooc",echartTheme)   
-    },[])
+    
     let option = {
         title:{
             text:"用户骑行订单"

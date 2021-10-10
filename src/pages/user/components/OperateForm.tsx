@@ -157,7 +157,7 @@ const OperateForm: React.FunctionComponent<IOperateFormProps> = (props) => {
                 });
        }
     }
-    const value = 1
+  
   return <div>
         <Card>
             <Button icon={<PlusOutlined />} type="primary" onClick={()=>handleClick("create")} className="buttons">创建员工</Button>
@@ -170,6 +170,7 @@ const OperateForm: React.FunctionComponent<IOperateFormProps> = (props) => {
                 width={600}
                 cancelText="取消"
                 okText="确定"
+                destroyOnClose
                 onOk={()=>{
                     message.success("添加成功")
                     setState({title:"",isvisible:false});
@@ -182,12 +183,13 @@ const OperateForm: React.FunctionComponent<IOperateFormProps> = (props) => {
                     labelCol={{ span: 5 }}
                     wrapperCol={{ span: 19 }}
                     form={form}
+                    preserve={false}
               >
                   <Item label="用户名" name="username"  >
                        <Input placeholder="请输入用户名" defaultValue={record1?record1.username:""}/>
                   </Item>
                   <Item label="性别" name="sex"  >
-                        <RadioGroup defaultValue={value}>
+                        <RadioGroup defaultValue={record1?record1.sex:""}>
                             <Radio value={1} >男</Radio>
                             <Radio value={2} >女</Radio>
                         </RadioGroup>
