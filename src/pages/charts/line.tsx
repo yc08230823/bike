@@ -137,3 +137,112 @@
 // };
 
 // export default LinePage;
+import * as React from 'react';
+import ReactEchart from 'echarts-for-react';
+import { Card } from "antd"
+interface ILinePageProps {
+}
+
+const LinePage: React.FunctionComponent<ILinePageProps> = (props) => {
+    let option = {
+        title:{
+            text:"用户骑行订单",
+        },
+        xAxis:{
+            data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
+           
+         },
+        yAxis:{
+           type:"value"
+        },
+        tooltip:{  
+            trigger:"axis" 
+        },
+        series:[
+            {
+               
+                name:"订单量",
+                type: 'line',
+                data: [1000,2000,1500,3000,2000,1200,800 ]
+              
+            }
+        ]
+    } 
+    let option2 = {
+        title:{
+            text:"用户骑行订单",
+        },
+        xAxis:{
+            data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
+           
+         },
+         legend:{                                         //小标题
+            data: ['OFO订单量', '摩拜订单量'],
+         },
+        yAxis:{
+           type:"value"
+        },
+        tooltip:{  
+            trigger:"axis" 
+        },
+        series:[
+            {
+                name:"OFO订单量",
+                type: 'line',
+                data: [2000,3000,4500,6000,8000,12000,20000 ]
+            },
+            {
+                name:"摩拜订单量",
+                type: 'line',
+                data: [1000,2000,5500,6000,8000,10000,12000 ]
+            }
+        ]
+    }
+    let option3 = {
+        title:{
+            text:"用户骑行订单",
+        },
+        xAxis:{
+            type:"category",
+            boundaryGap:false,
+            data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日'],
+           
+         },
+        yAxis:{
+           type:"value"
+        },
+        tooltip:{  
+            trigger:"axis" 
+        },
+        series:[
+            {
+                name:"订单量",
+                type: 'line',
+                data: [1000,2000,1500,3000,2000,1200,800 ],
+                areaStyle:[]        //区域填充
+            }
+        ]
+    }
+  return <div>
+       <Card title="折线一" >
+             <ReactEchart 
+             style={{height:500}}
+             option={option}
+             />
+       </Card> 
+       <Card title="折线二" >
+             <ReactEchart 
+             style={{height:500}}
+             option={option2}
+             />
+       </Card> 
+       <Card title="折线三" >
+             <ReactEchart 
+             style={{height:500}}
+             option={option3}
+             />
+       </Card> 
+  </div>;
+};
+
+export default LinePage;
